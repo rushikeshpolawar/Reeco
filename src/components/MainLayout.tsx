@@ -1,13 +1,12 @@
-import {  BreadcrumbsUI } from "./BreadcrumbsUI";
-import { OrderDetails } from "./OrderDetails";
+import { Box } from "@mui/material";
 import { ProductList } from "./ProductList";
+import { SupplierDetails } from "./SupplierDetails";
 
 export const MainLayout = () => {
   return (
-    <>
-      <BreadcrumbsUI />
-      <OrderDetails />
+    <Box sx={{paddingLeft:"5%", marginRight:"5%"}}>
+      <SupplierDetails />
       <ProductList />
-    </>
+    </Box>
   );
 };
