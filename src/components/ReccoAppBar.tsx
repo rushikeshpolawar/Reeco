@@ -11,12 +11,16 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Container from "@mui/material/Container";
+import { useNavigate } from "react-router-dom";
 
 const pages: string[] = ["Store", "Orders", "Analytics"];
 const userDetails: string = "Caw Studio"; // Replace with actual username.
 const cartItemCount = 3; // Replace with actual cart count.
 
 export const ReccoAppBar: React.FC = () => {
+  
+  const navigate = useNavigate();
+
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
@@ -58,7 +62,7 @@ export const ReccoAppBar: React.FC = () => {
 
           <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
             {pages.map((page) => (
-              <Button key={page} sx={{ color: "white", mx: 1 }}>
+              <Button key={page} sx={{ color: "white", mx: 1 }} onClick={()=>{navigate(`/${page}`)}}>
                 {page}
               </Button>
             ))}
